@@ -1,155 +1,167 @@
 # Python Project: Development of a Codon Table Generator
 
-## 1. Project Overview
+1. Project Overview
 
-The **Codon Table Generator** is a Python-based project developed to understand the relationship between nucleotide sequences and amino acids during protein synthesis.
+The Codon Table Generator is a Python project to study the relation of amino acid formation from the required nucleotides in the amino acid codon table.
 
-The program uses the standard genetic code to translate DNA and RNA sequences into their corresponding amino acids. It contains a dictionary of all 64 possible codons and their associated amino acids.
+The program uses the standard genetic code to translate DNA and RNA sequences into amino acids. It includes a dictionary of all 64 possible codons and their associated amino acids.
 
-The program also identifies start and stop codons, divides nucleotide sequences into groups of three bases (codons), validates user input, and handles incomplete codons at the end of a sequence.
+The program also recognises the start and stop codons, groups the nucleotide sequences into groups of three bases (codons), checks user input and manages incomplete codons at the end of the sequence.
 
-This project demonstrates the application of basic Python programming concepts in biological sequence analysis.
+The simple python code used to compare the sequences in this project highlights the power of basic python programming for biological sequence analysis.
 
-## 2. Project Objective
+2. Project Objective
 
-The main objectives of this project are:
+Objectives for this project include:
 
-- To create a Python dictionary containing all 64 possible codons and their corresponding amino acids.
-- To accept DNA or RNA sequences as input from the user.
-- To validate nucleotide sequences to ensure that they contain only valid nucleotide bases.
-- To divide the input sequence into codons consisting of three nucleotides each.
-- To translate each codon into its corresponding amino acid using the standard genetic code.
-- To identify start codons and stop codons.
-- To detect and handle incomplete codons at the end of a sequence.
-- To display the complete codon table and the translated amino acid sequence.
+- Aims: To construct a Python dictionary with each of the 64 possible codons and the corresponding amino acid.
+- Allow for DNA or RNA sequences to be input by the user.
+- To check nucleotide sequences to verify they contain only valid nucleotide bases.
+- To break input sequence into codons of three nucleotides each.
+- In order to convert each codon to the matching amino acid according to the standard genetic code.
+- For the recognition of start codons and stop codons.
+- Purpose To identify and remove incomplete codons present at the end of a sequence.
+- Press for print mode to view full page codon table and translated amino acid sequence.
 
-## 3. Biological Background
+3. Biological Background
 
-### What is a codon?
+# What is a Codon?
 
-A codon is a sequence of three consecutive nucleotides in DNA or RNA that specifies a particular amino acid or a stop signal during protein synthesis.
+A codon is three adjacent nucleotides in a mRNA (or DNA) molecule that codes for a specific amino acid in the synthesis of a protein.
 
-There are four different nucleotides in DNA:
+DNA contains four distinct nucleotides:
 
 - Adenine (A)
 - Thymine (T)
 - Guanine (G)
 - Cytosine (C)
 
-In RNA, thymine (T) is replaced by uracil (U).
+In RNA, T is replaced with U.
 
-Since there are four possible nucleotides and each codon contains three nucleotides, the total number of possible codons is:
+Because there are four nucleotides and each codon consists of three nucleotides then the possible codons will be:
 
-**4 × 4 × 4 = 64 codons**
+4 × 4 × 4 = 64 set of codons
 
 These 64 codons include:
+
 - 61 codons that specify amino acids.
-- 3 stop codons that signal the termination of translation.
+- 3 stop codons that mean translation is complete.
 
-### Start and Stop Codons
+# Start and Stop Codons
 
-A start codon signals the beginning of translation.
+The start codon indicates the beginning of translation.
 
-- **ATG (DNA) / AUG (RNA):** Codes for Methionine and acts as the standard start codon.
+- ATG (DNA) / AUG (RNA): Methionine- the start codon.
 
 Stop codons signal the termination of translation.
 
 | DNA codon | RNA codon | Function |
+
 |---|---|---|
+
 | TAA | UAA | Stop |
+
 | TAG | UAG | Stop |
+
 | TGA | UGA | Stop |
 
-### What is a genetic code?
+# What is a Genetic Code?
 
-The genetic code is the set of rules that determines how nucleotide codons correspond to amino acids during protein synthesis.
+Genetic code: the rule that maps from nucleotide sequences (codons) to amino acids during translation.
 
-The standard genetic code is used in this project to establish the relationship between all 64 codons and their corresponding amino acids.
+This project uses the standard genetic code to set the relationship for each of the 64 possible codons and the amino acids they code for.
 
-## 4. Tools and Technologies Used
+4. Tools and Technologies Used
 
-| Tool / Technology | Application |
+| Tool / Technology | Usage |
+
 |---|---|
+
 | Python 3 | Programming language |
-| Python Dictionary | Storing the 64 codons and amino acids |
-| Python Lists | Storing codons and translated amino acids |
-| For loops | Iterating through nucleotide sequences and codons |
-| Conditional statements | Input validation and identification of start/stop codons |
-| String manipulation | Converting input to uppercase and processing DNA/RNA sequences |
-| GitHub | Hosting and maintaining the project repository |
+| Python Dictionary | storing the 64 codons and amino acids |
+| Python Lists | Storing the actual codons as they are, with the translated amino acids |
+| Looping through nucleotide sequences and codons |
+| Conditional statements | Input validation and start/stop codon identification |
+| String handling | Upper case conversion and processing of input and seq input data |
+| GitHub | host & manage the project repository |
 
-**External libraries:** None. The project uses Python's built-in features and does not require additional packages.
+External libraries: None. The code relies on Python's internal features and imports no extra packages.
 
-## 5. Methodology and Program Workflow
+5. Methodology and Program Workflow
 
-The project is divided into the following steps:
+The project can be divided into these steps:
 
-### Step 1: Creation of the Codon Dictionary
+# Initial step: creation of the codon reference dictionary
 
-A Python dictionary named `Codon_Table` is created containing all 64 possible DNA codons and their corresponding amino acids.
+Python dictionary Codon_Table is created and it includes all the 64 codons and the amino acids associated with the codons.
 
-Each codon is used as a key, while its corresponding amino acid is stored as the value.
+Use each codon as the key and the matching amino acid as the value.
 
 Example:
 
-```python
+``python
+
 Codon_Table = {
-    "ATG": "Methionine",
-    "GCT": "Alanine",
-    "TTT": "Phenylalanine",
-    "TAA": "Stop"
+
+"ATG": "Methionine",
+ "GCT": "Alanine",
+ "TTT": "Phenylalanine",
+
+"TAA": "Stop"
+
 }
-```
+
+`
 
 The complete dictionary contains all 64 codons.
 
-### Step 2: Displaying the Codon Table
+# Step 2: Showing off the Codon Table
 
-A function named `display_Codon_Table()` is developed to display each codon and its corresponding amino acid.
+We develop a function displayCodonTable() to show each of the codon and the corresponding amino acid.
 
-The `len()` function is also used to determine the total number of codons stored in the dictionary.
+The total number of codons stored in the dictionary is also found using the len().
 
-### Step 3: Input Validation
+# Step 3: Input Validation
 
-A function named `validate_sequence()` checks whether the input sequence contains valid nucleotide bases.
+The function validate_sequence() verifies that the sequence input has valid bases.
 
 The program accepts:
 
 - DNA: A, T, G, C
 - RNA: A, U, G, C
 
-If an invalid nucleotide is detected, the function returns `False`.
+If an invalid base is found, the function returns False.
 
-### Step 4: Dividing the Sequence into Codons
+# Step 4: Break Up the Sequence into Codons
 
-The input nucleotide sequence is divided into groups of three bases using a `for` loop and string slicing.
+The input DNA sequence is chopped into three bases using a for` loop and string slicing.
 
-The `range()` function is used with a step size of three to move through the sequence.
+Use a step size of three to iterate through the sequence with the range() function.
 
-The resulting codons are stored in a Python list.
+The final codons are also stored in a list, in Python.
 
-### Step 5: Translation of Codons
+# Step 5: Translation of Codons
 
-Each codon is compared with the keys in the `Codon_Table` dictionary.
+I then compare the codon with the options in the Codon_Table dictionary.
 
-The corresponding amino acid is retrieved using dictionary indexing and stored in an amino acid list.
+The amino acid is obtained by dictionary indexing and then stored in the amino acid list.
 
-For RNA sequences, uracil (U) is replaced with thymine (T) before dictionary lookup so that the same codon table can be used.
+In the case of RNA sequences, uracil (U) is substituted with thymine (T) prior to dictionary lookup in order to be able to use the same codon table.
 
-### Step 6: Identification of Start and Stop Codons
+# Step 6: Identification of Start and Stop Codons
 
-The program checks each codon against predefined start and stop codon lists.
+If it is a start or stop codon, the program compares it to the appropriate list.
 
-- ATG/AUG is identified as the start codon.
-- TAA/UAA, TAG/UAG and TGA/UGA are identified as stop codons.
+- The start codon is ATG/AUG.
+- Stop Codons: TAA/ UAA, TAG/ UAG, TGA/ UGA.
 
-### Step 7: Handling Incomplete Codons
+# Step 7: Handling Incomplete Codons
 
-Since a codon must contain exactly three nucleotides, the program checks the length of each codon.
+Because a codon is composed of three nucleotides, the program inspects the lengths of the codons.
 
-If the final group contains fewer than three nucleotides, it is identified as an incomplete codon and is not translated.
+An incomplete codon is any group of fewer than three nucleotides in the final reading group. As a result, incomplete codons are never translated.
 
-### Step 8: Displaying the Final Results
+# Step 8: Displaying the Final Results
 
 The program displays:
 
@@ -159,189 +171,220 @@ The program displays:
 - Identified start and stop codons.
 - Incomplete codons, if present.
 
-## 6. Sample Input and Output
+  6. Sample Input and Output
 
-### Example 1: DNA Sequence
+# Example 1: Sequence of DNA
 
-**Input:**
+Input:
 
-```text
+``text
+
 ATGGCTTTTTAA
-```
 
-**Output:**
+`
+
+Output:
 
 | Codon | Amino Acid |
+
 |---|---|
+
 | ATG | Methionine |
+
 | GCT | Alanine |
+
 | TTT | Phenylalanine |
+
 | TAA | Stop |
 
-**Translated amino acid sequence:**
+Translated amino acid sequence:
 
-```text
+`text
+
 Methionine - Alanine - Phenylalanine - Stop
-```
 
-**Start codon:** ATG
+`
 
-**Stop codon:** TAA
+Start codon: ATG
 
-### Example 2: RNA Sequence
+Stop codon: TAA
 
-**Input:**
+# Example 2: RNA Sequence
 
-```text
+Input:
+
+`text
+
 AUGGCUUUUUAA
-```
 
-**Output:**
+`
+
+Output:
 
 | Codon | Amino Acid |
+
 |---|---|
+
 | AUG | Methionine |
-| GCU | Alanine |
+
+GCU | Alanine |
+
 | UUU | Phenylalanine |
+
 | UAA | Stop |
 
-### Example 3: Incomplete Codon
+# Example 3: Incomplete Codon
 
-**Input:**
+Input:
 
-```text
+`text
+
 ATGGCTTTTA
-```
 
-**Output:**
+`
 
-| Codon | Result |
+Output:
+
+|Codon |Result |
+
 |---|---|
+
 | ATG | Methionine |
+
 | GCT | Alanine |
+
 | TTT | Phenylalanine |
+
 | A | Incomplete codon |
 
-The final nucleotide group contains only one base and therefore cannot be translated.
+The last group of nucleotides has only one base left and thus cannot be translated.
 
-### Example 4: Invalid Input
+# Example 4: Invalid Input
 
-**Input:**
+Input:
 
-```text
+`text
+
 ATGXGCT
-```
 
-**Output:**
+`
 
-```text
-Invalid sequence! Enter only A, T, G, C or U.
-```
+Output:
 
-## 7. Comparison with Existing GitHub Codon Table Repositories
+`text
 
-To compare the codon table developed in this project with existing implementations, the following public GitHub repository was referred to:
+Invalid sequence! Please enter only A, T, G, C or U.
 
-**Reference Repository:**
+`
 
-[GitHub – linsalrob/genetic_codes](https://github.com/linsalrob/genetic_codes)
+7. Comparison with Existing GitHub Codon Table Repositories
 
-This repository provides Python-based tools for translating DNA sequences using genetic code tables, including the standard genetic code.
+The public GitHub page that has been used as reference for comparing the codon table built in this project to other implementations is:
 
-### Comparison
+Reference Repository:
+
+GitHub - linsalrob/geneticcodes
+
+This repo contains Python code for translating DNA sequences by way of genetic code tables (the Standard genetic code).
+
+# Comparison
 
 | Feature | This Project | Reference Repository |
+
 |---|---|---|
+
 | Standard genetic code | Yes | Yes |
 | 64 possible codons | Yes | Yes |
-| Codon-to-amino-acid mapping | Python dictionary | Genetic code library |
-| DNA sequence translation | Yes | Yes |
+| Mapping of each codon to amino acid | Python dictionary | Genetic code library |
+| Traslation of DNA seqence | Yes | Yes |
 | RNA codon support | Yes | Yes |
-| Start and stop codon identification | Yes | Supported through genetic code information |
+| ATG/ATC start codon | Yes | Based on genetic code information. |
 | Multiple genetic codes | No | Yes |
 
-### Comparison Findings
+# Comparison Findings
 
-The codon assignments in this project follow the standard genetic code and are consistent with the standard translation table used by the reference repository.
+The codon table for this project is set according to the standard genetic code and always remaps to the 'Standard translation table' of the reference library.
 
-Both implementations establish the relationship between nucleotide triplets and their corresponding amino acids.
+Both implementations define the link between the triplet of nucleotides and the amino acid it codes for.
 
-However, the reference repository provides additional functionality, including support for alternative genetic codes and different translation tables.
+The source code repository has more features, namely the alternative genetic codes and support for translation tables.
 
-The present project focuses on implementing the standard genetic code using basic Python programming concepts, making it suitable for understanding the fundamentals of codon translation.
+This project is designed to implement the standard genetic code in simplistic Python programming, and can thus be used to provide the foundations of codon translation.
 
-## 8. Python Concepts Demonstrated
+8. Python Concepts Demonstrated
 
-The project applies the following fundamental Python concepts:
+The project utilizes the key concepts of Python:
 
-1. **Dictionaries:** Used to store codons and their corresponding amino acids.
-2. **Functions:** Used to organize operations such as displaying the codon table, validating sequences and translating sequences.
-3. **Lists:** Used to store codons and amino acids.
-4. **For loops:** Used to iterate through nucleotide sequences and dictionaries.
-5. **Conditional statements:** Used for input validation and identifying start and stop codons.
-6. **String slicing:** Used to divide nucleotide sequences into groups of three.
-7. **String methods:** Used for uppercase conversion and replacing RNA uracil with DNA thymine.
-8. **User input:** Used to accept nucleotide sequences from the user.
+1. For storing codons and amino acids.
+2. Functions: Used to arrange operations like show the codon table, check the sequence and translate sequences.
+3. Lists: Used to store a list of codons or amino acids.
+4. For loops: utilized to traverse nucleotide sequences and dictionaries.
+5. It is used to ensure the validity of the input and to find the start and stop codon.
+6. String slicing: Used to convert the nucleotide sequence into groups of three.
+7. For uppercase conversion and replacing RNA uracil with DNA thymine.
+8. User input: Accepts a nucleotide sequence from user.
 
-## 9. Limitations
+9. Limitations
 
-- The program uses only the standard genetic code and does not include alternative genetic codes.
-- Translation is performed from the first nucleotide in the input sequence, without searching for a reading frame or automatically locating a start codon.
-- The program identifies start and stop codons but does not enforce translation termination at the first stop codon.
-- The program does not perform biological sequence alignment or predict complete protein structures.
+- The program uses only the standard genetic code and does not use alternative genetic codes.
+- Translation occurs from the first nucleotide in the input sequence, and does not look for a reading frame or find a start codon automatically.
+- The program searches for start and stop codons, but does not require translation to end at the first stop codon.
+- The tool does not provide biological sequence alignment or polyprotein structure prediction.
 
-## 10. Conclusion
+10. Conclusion
 
-The Codon Table Generator successfully demonstrates how Python programming can be applied to basic biological sequence analysis.
+The code Table Generator is an effective example of how basic biological data can be analyzed using Python programming.
 
-By creating a dictionary of 64 codons and implementing sequence validation, codon division and amino acid translation, the project provides an understanding of the relationship between nucleotide sequences and protein synthesis.
+Providing an understanding of the correlation between nucleotide sequences and protein synthesis, this project used a dictionary of 64 codons and implemented sequence validation, codon splitting and amino acid translation.
 
-The project also demonstrates how fundamental Python concepts such as dictionaries, lists, loops, functions and conditional statements can be used to solve a biological problem.
+This project also shows how simply Python key concepts dictionaries, lists, for loops, functions and if statements can be employed to address a biological problem.
 
-The additional RNA translation feature extends the functionality of the program and provides a basic understanding of DNA and RNA codon equivalence.
+The explanation of the extra feature of RNA translation expands the capacity of program as well as an initial information about the equivalence of DNA and RNA codons.
 
-Overall, this project helped develop practical programming skills and an understanding of the standard genetic code and its application in bioinformatics.
+In general, the project resulted in both the acquiring of the skills of programming and practical knowledge of the standard genetic code.
 
-## 11. How to Run the Project
+11. How to Run the Project
 
-### Requirements
+# Requirements
 
 - Python 3 installed on your computer.
-- A Python editor such as VS Code, IDLE or Jupyter Notebook.
+- A Python editor like VS Code, IDLE or Jupyter Notebook.
 
-### Steps
+# Steps
 
 1. Clone or download this repository.
-2. Open the project folder in your Python editor.
+2. Open the project folder on your Python editor.
 3. Run the Python file:
 
-```bash
-python codon_table_generator.py
-```
+`bash
 
-4. Enter a DNA or RNA sequence when prompted.
-5. View the translated amino acid sequence and other results.
+python codontablegenerator.py
 
-### Repository Structure
+`
 
-```text
+4. When asked to do so.
+5. See translated amino acid sequence and other results.
+
+# Repository Structure
+
+`text
+
 Codon-Table-Generator/
-│
-├── codon_table_generator.py
-│
-└── README.md
-```
 
-## 12. Author
+codontablegenerator.py
 
-**Project:** Python Assessment 2 – Codon Table Generator
+README_Part1.md
 
-**Course:** Bioinformatics and Biotechnology
+README_Part2.md
 
-**Language:** Python
+``
 
-**Repository:** [Add your GitHub repository link here]
+12. Author
 
----
+Project: Python Assessment 2 - Codon Table Generator
 
-**End of Project**
+Course: Bioinformatics and Biotechnology
+
+Programming Language: Python
+
+Repository: Add your GitHub repository link here.
