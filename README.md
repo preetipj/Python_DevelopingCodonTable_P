@@ -10,3 +10,22 @@ The program also identifies start and stop codons, divides nucleotide sequences 
 
 This project demonstrates the application of basic Python programming concepts in biological sequence analysis.
 
+2. Project Objective
+
+The main objectives of this project are:
+
+To create a Python dictionary containing all 64 possible codons and their corresponding amino acids.
+
+To accept DNA or RNA sequences as input from the user.
+
+To validate nucleotide sequences to ensure that they contain only valid nucleotide bases.
+
+To divide the input sequence into codons consisting of three nucleotides each.
+
+To translate each codon into its corresponding amino acid using the standard genetic code.
+
+To identify start codons and stop codons.
+
+To detect and handle incomplete codons at the end of a sequence.
+
+To display the complete codon table and the translated amino acid sequence.
