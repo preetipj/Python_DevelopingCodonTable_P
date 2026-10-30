@@ -78,13 +78,131 @@ def validate_sequence(sequence):
 
 ## 4. Divide the sequence into codons in groups of three nucleotides.
 
+dna_sequence = "ATGGCTTTTTAC"
+
+codons = []
+
+for i in range(0, len(dna_sequence), 3):
+
+    codon = dna_sequence[i:i+3]
+
+    codons.append(codon)
+
+print("Codons:", codons)
 
 ## 5. Translate each codon into its corresponding amino acid using the codon table.
- 
+amino_acids = []
+
+for codon in codons:
+
+    if codon in Codon_Table:
+
+        amino_acid = Codon_Table[codon]
+
+        amino_acids.append(amino_acid)
+
+print("Amino Acids:", amino_acids)
 
 ## 6. Identify start codons and stop codons
- 
+start_codons = ["ATG"]
+
+stop_codons = ["TAA", "TAG", "TGA"]
+
+print("\nStart Codons:")
+
+for codon in codons:
+
+    if codon in start_codons:
+
+        print(codon, "- Start Codon")
+
+
+print("\nStop Codons:")
+
+for codon in codons:
+
+    if codon in stop_codons:
+
+        print(codon, "- Stop Codon")
 ## 7. Handle incomplete codons at the end of the sequence.
- 
+print("\nChecking Incomplete Codons:")
+
+for codon in codons:
+
+    if len(codon) < 3:
+
+        print(codon, "- Incomplete Codon")
+
+    else:
+
+        print(codon, "- Complete Codon")
 ## 8. Display the codon table and the translated amino acid sequence
-   
+print("\nComplete Codon Table:")
+
+display_Codon_Table()
+
+
+print("\nFinal Codon Sequence:")
+
+print(" - ".join(codons))
+
+
+print("\nFinal Amino Acid Sequence:")
+
+print(" - ".join(amino_acids))
+
+# Accept DNA or RNA sequence from the user
+def translate_sequence(sequence):
+
+    codons = []
+
+    amino_acids = []
+
+    for i in range(0, len(sequence), 3):
+
+        codon = sequence[i:i+3]
+
+        codons.append(codon)
+
+        if len(codon) == 3:
+
+            if "U" in codon:
+                codon = codon.replace("U", "T")
+
+            amino_acid = Codon_Table[codon]
+
+            amino_acids.append(amino_acid)
+
+        else:
+
+            print(codon, "- Incomplete Codon")
+
+
+    print("\nCodons:", codons)
+
+    print("\nAmino Acid Sequence:", amino_acids)
+
+
+    print("\nStart and Stop Codons:")
+
+    for codon in codons:
+
+        if codon == "ATG" or codon == "AUG":
+
+            print(codon, "- Start Codon")
+
+        elif codon in ["TAA", "TAG", "TGA", "UAA", "UAG", "UGA"]:
+
+            print(codon, "- Stop Codon")
+
+sequence = input("\nEnter your DNA or RNA sequence: ")
+
+sequence = sequence.upper()
+
+if validate_sequence(sequence):
+
+    translate_sequence(sequence)
+
+else:
+
+    print("Invalid sequence! Enter only A, T, G, C or U.")
