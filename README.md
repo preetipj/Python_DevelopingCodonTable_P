@@ -181,7 +181,13 @@ The corresponding amino acid is retrieved using dictionary indexing and stored i
 
 For RNA sequences, uracil (U) is replaced with thymine (T) before dictionary lookup so that the same codon table can be used.
 
+Step 6: Identification of Start and Stop Codons
 
+The program checks each codon against predefined start and stop codon lists.
+
+ATG/AUG is identified as the start codon.
+
+TAA/UAA, TAG/UAG and TGA/UGA are identified as stop codons.
 GitHub
 
 Hosting and maintaining the project repository
