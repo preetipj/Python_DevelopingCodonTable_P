@@ -126,6 +126,62 @@ String manipulation
 
 Converting input to uppercase and processing DNA/RNA sequences
 
+5. Methodology and Program Workflow
+
+The project is divided into the following steps:
+
+Step 1: Creation of the Codon Dictionary
+
+A Python dictionary named Codon_Table is created containing all 64 possible DNA codons and their corresponding amino acids.
+
+Each codon is used as a key, while its corresponding amino acid is stored as the value.
+
+Example:
+
+Codon_Table = {
+    "ATG": "Methionine",
+    "GCT": "Alanine",
+    "TTT": "Phenylalanine",
+    "TAA": "Stop"
+}
+
+The complete dictionary contains all 64 codons.
+
+Step 2: Displaying the Codon Table
+
+A function named display_Codon_Table() is developed to display each codon and its corresponding amino acid.
+
+The len() function is also used to determine the total number of codons stored in the dictionary.
+
+Step 3: Input Validation
+
+A function named validate_sequence() checks whether the input sequence contains valid nucleotide bases.
+
+The program accepts:
+
+DNA: A, T, G, C
+
+RNA: A, U, G, C
+
+If an invalid nucleotide is detected, the function returns False.
+
+Step 4: Dividing the Sequence into Codons
+
+The input nucleotide sequence is divided into groups of three bases using a for loop and string slicing.
+
+The range() function is used with a step size of three to move through the sequence.
+
+The resulting codons are stored in a Python list.
+
+Step 5: Translation of Codons
+
+Each codon is compared with the keys in the Codon_Table dictionary.
+
+The corresponding amino acid is retrieved using dictionary indexing and stored in an amino acid list.
+
+For RNA sequences, uracil (U) is replaced with thymine (T) before dictionary lookup so that the same codon table can be used.
+
+
 GitHub
 
 Hosting and maintaining the project repository
